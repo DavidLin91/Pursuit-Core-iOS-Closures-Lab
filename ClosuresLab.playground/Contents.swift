@@ -4,51 +4,73 @@ import UIKit
 
 // Write a function named applyKTimes that takes an integer K and a closure and calls the closure K times. The closure will not take any parameters and will not have a return value.
 
+func applyKTimes( _ k : Int, closure x: () -> ()) {
+    for _ in 1...k {
+    x()
+    }
+}
 
-// Your function here
+//Uncomment out the following lines to check your solution
 
-// Uncomment out the following lines to check your solution
-
-//var myVal = 0
-//applyKTimes(5) {
-//    myVal += 1
-//}
-//assert(myVal == 5, "Expected myVal to be five, but was \(myVal)")
+var myVal = 0
+applyKTimes(5) {
+    myVal += 1
+}
+assert(myVal == 5, "Expected myVal to be five, but was \(myVal)")
 
 
 // Question Two
 
 // Write a function called multiples(of:in) that takes in an array of Ints and returns all of the Ints that are a multiple of a given number n.  Use filter in your function.
 
-// Your function here
+func multiples(of n: Int , in y: [Int]) -> [Int] {
+    let filterInts = y.filter { $0 % n == 0}
+    return filterInts
+}
+
 
 // Uncomment out the following lines to check your solution
 
-//let numbers = [1, 2, 3, 4, 6, 8, 9, 3, 12, 11]
-//let expectedOutputTwo = [3, 6, 9, 3, 12]
-//let outputTwo = multiples(of: 3, in: numbers)
-//assert(outputTwo == expectedOutputTwo, "Expected output to be \(expectedOutputTwo), but found \(outputTwo)")
+let numbers = [1, 2, 3, 4, 6, 8, 9, 3, 12, 11]
+let expectedOutputTwo = [3, 6, 9, 3, 12]
+let outputTwo = multiples(of: 3, in: numbers)
+assert(outputTwo == expectedOutputTwo, "Expected output to be \(expectedOutputTwo), but found \(outputTwo)")
 
 
 // Question Three
 
 // Write a function called largestValue(in:) that finds the largest Int in an array of Ints. Use reduce to solve this exercise.
 
-// Your function here
+func largestValue(in numbers: [Int])  -> Int {
+  guard let first = numbers.first else { return -1 }
+let result = numbers.reduce(first) { prevResult, currentValue in
+   if prevResult > currentValue {
+       return prevResult
+   } else {
+       return currentValue
+     }
+   }
+   return result
+}
+let largestResult = largestValue(in: [56, 100, -56, 0, 208])
+print(largestResult)
 
 // Uncomment out the following lines to check your solution
 
-//let moreNumbers = [4, 7, 1, 9, 6, 5, 6, 9]
-//let expectedOutputThree = 9
-//let outputThree = largestValue(in: moreNumbers)
-//assert(outputThree == expectedOutputThree, "Expected output to be \(expectedOutputThree), but found \(outputThree)")
+let moreNumbers = [4, 7, 1, 9, 6, 5, 6, 9]
+let expectedOutputThree = 9
+let outputThree = largestValue(in: moreNumbers)
+assert(outputThree == expectedOutputThree, "Expected output to be \(expectedOutputThree), but found \(outputThree)")
 
 
 // Question Four
 
 // Write a function called sortedNamesByLastName(in:) that takes in an array of tuples of type (String, String) and returns an array of tuples sorted by last name.
 
-// Your function here
+func sortedNamesByLastName(in fandlTuple : [ String : String ]) -> [ String ] {
+    
+    
+}
 
 // Uncomment out the following lines to check your solution
 
